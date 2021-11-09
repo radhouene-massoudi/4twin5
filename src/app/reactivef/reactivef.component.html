@@ -1,0 +1,59 @@
+<label> name</label>
+<input type="text" [formControl]="name">
+<div *ngIf="name.invalid">
+  <div *ngIf="name?.errors?.required">
+required
+</div>
+<div *ngIf="name?.errors?.minlength">
+  minlength
+  </div>
+</div>
+<label>last name</label>
+<input type="text" [formControl]="lastname">
+<div *ngIf="lastname.invalid">
+required
+</div>
+<input type="submit" value="send">
+
+<form [formGroup]="formgroup">
+<label>cin</label>
+<input type="text" formControlName='cin'>
+<div *ngIf="cin1?.invalid"> 
+  required
+</div>
+<label>@</label>
+<input type="text" formControlName='adresse'>
+
+<input type="submit" value="send">
+<input type="text" formControlName='cin'>
+<div *ngIf="adr?.invalid"> 
+  <div *ngIf="adr?.errors?.required">
+  required email
+</div>
+<div *ngIf="adr?.errors?.email">
+   email invalid
+</div>
+</div>
+<input type="submit" value="send data" (click)="showForm(formgroup)" [disabled]='!formgroup.valid'>
+</form>
+
+
+
+<h1>f builder</h1>
+<form [formGroup]="fbf">
+  <label>age</label>
+  <input type="text" formControlName='age'>
+  
+  <label>domain</label>
+  <input type="text" formControlName='domaine'>
+  
+  <input type="submit" value="send">
+  <div formArrayName="cours">
+<div *ngFor=" let a of cours.controls; let i =index">
+<input type="text" [formControlName]="i">
+<input type="submit" value="delete cours" (click)="delete(i)">
+</div>
+<input type="submit" value="add cours" (click)="addcours()">
+  </div>
+  <input type="submit" value="send fb" (click)="showForm(fbf)" [disabled]='!fbf.valid'>
+  </form>

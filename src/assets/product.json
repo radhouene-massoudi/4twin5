@@ -1,0 +1,11 @@
+{
+"product":
+[
+  { "idProduct": 1, "code": 127,"libelle": "nbv,bv,xcv ,cxvb", "prixunitaire" : 2000, "tauxTva" :10},
+  { "idProduct": 2, "code": 1256,"libelle": "table", "prixunitaire" : 2000, "tauxTva" :10},
+  { "idProduct": 3, "code": 1240,"libelle": "tv", "prixunitaire" : 2000, "tauxTva" :10}
+]
+
+
+}
+

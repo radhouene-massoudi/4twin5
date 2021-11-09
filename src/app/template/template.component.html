@@ -1,0 +1,29 @@
+<p>template works!</p>
+<form #f="ngForm">
+
+    <label> lettres minuscules et majuscules </label>
+    <input type="text" name ="firstname" ngModel #test="ngModel" required >
+
+<div *ngIf="test.invalid">
+error
+</div>
+<label> email </label>
+    <input type="text" name ="firstname" [(ngModel)]="userss.email"
+      #test="ngModel" pattern="[A-Za-z0-9]+@gmail.com" >
+
+<div *ngIf="test.invalid">
+email
+</div>
+
+<label> name </label>
+    <input type="text" name ="firstname" ngModel #test="ngModel"  pattern="[A-Za-z]" minlength="3" >
+
+<div *ngIf="test.invalid">
+  <div *ngIf="test.errors?.pattern">
+    pattern
+  </div>
+  <div *ngIf="test.errors?.minlength">
+    minlength
+  </div>
+</div>
+</form>

@@ -1,0 +1,11 @@
+<div *ngFor="let p of ListProduct;let i=index">
+{{p.code}}
+{{p.idProduct}}
+{{p.libelle}}
+{{p.prixunitaire}}
+{{p.tauxTva}}
+<input type="submit" value="calculer" (click)="submit(p.libelle,i)">
+<div *ngIf="show && i==j">
+{{nbofproduct}}
+</div>
+</div>

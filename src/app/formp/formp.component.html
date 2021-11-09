@@ -1,0 +1,15 @@
+<form #f="ngForm">
+<label>name of product</label>
+<input type="text" name="test" ngModel required #test="ngModel" minlength="3">
+<div *ngIf="test.invalid && test.touched">
+  <div *ngIf="test.errors?.required">
+required
+</div>
+<div *ngIf="test.errors?.minlength">
+  minlength
+  </div>
+</div>
+<label>description</label>
+<input type="text" name="descption" ngModel required #desc="ngModel">
+<input type="submit" [disabled]="!f.valid" value="send" (click)="showForm(test)">
+</form>

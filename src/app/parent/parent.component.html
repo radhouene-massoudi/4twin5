@@ -1,0 +1,3 @@
+<div *ngFor="let u of list">
+<app-child [user]="u" (notif)="execute($event)"></app-child>
+</div>
